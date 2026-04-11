@@ -18,6 +18,9 @@ endif()
 
 find_package(VTK REQUIRED)
 
+# Add NeuronMetrics FIRST
+add_subdirectory(external/NeuronMetrics)
+
 # Add submodules
 add_subdirectory(src)
 add_subdirectory(apps/cli)

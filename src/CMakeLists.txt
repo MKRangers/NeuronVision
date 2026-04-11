@@ -7,6 +7,7 @@ add_library(neuronvision_core STATIC
 
 target_link_libraries(neuronvision_core
     PRIVATE nv_core
+    PRIVATE NeuronMetrics
 )
 
 target_include_directories(neuronvision_core

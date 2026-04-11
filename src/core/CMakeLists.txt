@@ -9,6 +9,7 @@ add_library(nv_core STATIC
 
 target_link_libraries(nv_core
     PRIVATE nv_volume
+    PRIVATE NeuronMetrics
 )
 
 set_target_properties(nv_core PROPERTIES

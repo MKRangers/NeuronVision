@@ -1,0 +1,3 @@
+[submodule "external/NeuronMetrics"]
+	path = external/NeuronMetrics
+	url = https://github.com/MKRangers/NeuronMetrics.git
