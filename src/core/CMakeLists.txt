@@ -1,7 +1,7 @@
 add_subdirectory(volume)
+add_subdirectory(graph)
 #add_subdirectory(segmentation)
 #add_subdirectory(skeleton)
-#add_subdirectory(graph)
 
 add_library(nv_core STATIC
     nvCore.cpp
