@@ -18,7 +18,8 @@ namespace nv
 
 			void setUpTrueSegments(NeuronSP neuron);
 			void setUpFalseSegments(NeuronSP neuron);
-
+			const std::vector<Neuron::Segment>& getTrueSegments() const { return mTrueSegments; }
+			const std::vector<Neuron::Segment>& getFalseSegments() const { return mFalseSegments; }
 
 		private:
 			std::vector<Neuron::Segment> mTrueSegments;
