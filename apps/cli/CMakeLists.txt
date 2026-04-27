@@ -3,6 +3,7 @@ add_executable(neuronvision_cli
 )
 
 target_link_libraries(neuronvision_cli
+    PRIVATE nv_graph
     PRIVATE neuronvision_core
     PRIVATE NeuronMetrics
 )
