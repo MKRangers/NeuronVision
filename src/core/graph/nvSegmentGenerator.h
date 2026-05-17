@@ -16,10 +16,10 @@ namespace nv
 			SegmentGenerator() = default;
 			~SegmentGenerator() = default;
 
-			void setUpTrueSegments(NeuronSP neuron);
-			void setUpFalseSegments(NeuronSP neuron);
-			const std::vector<Neuron::Segment>& getTrueSegments() const { return mTrueSegments; }
-			const std::vector<Neuron::Segment>& getFalseSegments() const { return mFalseSegments; }
+			void setUpTrueNeuronSegments(NeuronSP neuron);
+			void setUpFalseNeuronSegments(NeuronSP neuron);
+			const std::vector<Neuron::Segment>& getTrueNeuronSegments() const { return mTrueSegments; }
+			const std::vector<Neuron::Segment>& getFalseNeuronSegments() const { return mFalseSegments; }
 
 		private:
 			std::vector<Neuron::Segment> mTrueSegments;

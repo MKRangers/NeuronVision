@@ -4,7 +4,7 @@ using namespace std;
 
 namespace nv
 {
-	void SegmentGenerator::setUpTrueSegments(NeuronSP neuron)
+	void SegmentGenerator::setUpTrueNeuronSegments(NeuronSP neuron)
 	{
 		mTrueNeuron = neuron;
 		mTrueNeuron->populateSegments();
@@ -16,7 +16,7 @@ namespace nv
 		}
 	}
 
-	void SegmentGenerator::setUpFalseSegments(NeuronSP neuron)
+	void SegmentGenerator::setUpFalseNeuronSegments(NeuronSP neuron)
 	{
 		mFalseNeurons.push_back(neuron);
 		mFalseNeurons.back()->populateSegments();
