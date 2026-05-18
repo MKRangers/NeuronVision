@@ -1,6 +1,7 @@
 #include "nvSegmentGenerator.h"
 
 using namespace std;
+using namespace nm;
 
 namespace nv
 {
@@ -8,8 +9,8 @@ namespace nv
 	{
 		mTrueNeuron = neuron;
 		mTrueNeuron->populateSegments();
-		mTrueSegments = mTrueNeuron->getSegments();
-		for (auto& seg : mTrueSegments)
+		mTrueNeuronSegments = mTrueNeuron->getSegments();
+		for (auto& seg : mTrueNeuronSegments)
 		{
 			if (!seg.empty())
 				seg.pop_front();
@@ -21,12 +22,30 @@ namespace nv
 		mFalseNeurons.push_back(neuron);
 		mFalseNeurons.back()->populateSegments();
 		const vector<Neuron::Segment>& segments = mFalseNeurons.back()->getSegments();
-		mFalseSegments.insert(mFalseSegments.end(), segments.begin(), segments.end());
-		for (auto& seg : mFalseSegments)
+		mFalseNeuronSegments.insert(mFalseNeuronSegments.end(), segments.begin(), segments.end());
+		for (auto& seg : mFalseNeuronSegments)
 		{
 			if (!seg.empty())
 				seg.pop_front();
 		}
+	}
+
+	vector<const Neuron::Segment*> SegmentGenerator::getTrueNeuronSegments() const
+	{
+		vector<const Neuron::Segment*> segments;
+		for (const auto& seg : mTrueNeuronSegments)
+			segments.push_back(&seg);
+		
+		return segments;
+	}
+
+	vector<const Neuron::Segment*> SegmentGenerator::getFalseNeuronSegments() const
+	{
+		vector<const Neuron::Segment*> segments;
+		for (const auto& seg : mFalseNeuronSegments)
+			segments.push_back(&seg);
+		
+		return segments;
 	}
 
 }

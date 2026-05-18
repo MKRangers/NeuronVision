@@ -2,6 +2,7 @@ add_library(nv_graph STATIC
     nvSegmentGenerator.cpp
 
     nvSegmentGenerator.h
+    nvFeatureStructs.h
 )
 
 target_include_directories(nv_graph

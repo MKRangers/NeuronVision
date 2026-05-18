@@ -18,13 +18,15 @@ namespace nv
 
 			void setUpTrueNeuronSegments(NeuronSP neuron);
 			void setUpFalseNeuronSegments(NeuronSP neuron);
-			const std::vector<Neuron::Segment>& getTrueNeuronSegments() const { return mTrueSegments; }
-			const std::vector<Neuron::Segment>& getFalseNeuronSegments() const { return mFalseSegments; }
+			std::vector<const Neuron::Segment*> getTrueNeuronSegments() const;
+			std::vector<const Neuron::Segment*> getFalseNeuronSegments() const;
 
 		private:
-			std::vector<Neuron::Segment> mTrueSegments;
-			std::vector<Neuron::Segment> mFalseSegments;
+			std::vector<Neuron::Segment> mTrueNeuronSegments;
+			std::vector<Neuron::Segment> mFalseNeuronSegments;
 
+			// Neuron objects may be modified by this class by calling populateSegments if the segments are not populated when the neuron is created.
+			// Also, neuron objects could also be owned by other classes or processes at the same time, so we use shared_ptr here.
 			NeuronSP mTrueNeuron;
 			std::vector<NeuronSP> mFalseNeurons;
 	};
